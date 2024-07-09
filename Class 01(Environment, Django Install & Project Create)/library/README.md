@@ -47,4 +47,4 @@
      ```
 
    - Your local server will be running at `http://127.0.0.1:8000/`.
-    ![runserver](/assets/runserver.png)
+   ![runserver](https://i.imgur.com/mqk4Yte.png)

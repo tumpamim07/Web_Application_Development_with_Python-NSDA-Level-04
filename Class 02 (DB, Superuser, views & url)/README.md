@@ -71,7 +71,7 @@ To manage your Django application:
 
 2. Link the view function to `urls.py`:
    ```python
-   from myProject.views import Homepage
+   from myproject.views import Homepage
    
    urlpatterns = [
        path('Homepage/', Homepage, name='Homepage'),
@@ -100,3 +100,9 @@ To manage your Django application:
 - Use import * to import everything from a module.
 - Use from module_name import function_name to import a specific function from a module.
 - Importing all (import *) brings in all functions and variables from a module, while importing specific functions (from module_name import function_name) brings in only the function you specify.
+Sure, here's a concise explanation:
+
+- **render**: Shows HTML content on a web page.
+- **redirect**: Sends users to a different website URL.
+- **HttpResponse**: Displays text or changes on a website.
+ 

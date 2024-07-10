@@ -1,4 +1,7 @@
-<details>Template Mastering</details>
+# Fourth Class
+<details>
+<summary><b>Template Mastering, Include, Extend, Block Content</b></summary>
+</details>
 
 #### 1. Creating HTML Templates
 

@@ -1,7 +1,7 @@
 # Fourth Class
 <details>
 <summary><b>Template Mastering, Include, Extend, Block Content</b></summary>
-</details>
+
 
 #### 1. Creating HTML Templates
 
@@ -113,3 +113,5 @@
 ### Note
 
 This step-by-step guide helps you implement navigation using a navbar and master template structure using include and extend techniques in Django. Ensure consistency in naming conventions, HTML structure, and Django template tags for smooth navigation and efficient template management.
+
+</details>

@@ -3,6 +3,7 @@
 <summary><b>Template Mastering, Include, Extend, Block Content</b></summary>
 
 
+
 #### 1. Creating HTML Templates
 
 - **Create HTML Pages**: Start by creating HTML pages (`Base.html` and `Home.html` etc) within the `template` directory of my Django project.

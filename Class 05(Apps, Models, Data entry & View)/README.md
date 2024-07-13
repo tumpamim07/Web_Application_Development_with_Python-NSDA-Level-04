@@ -156,7 +156,7 @@ Use a tool like DB Browser for SQLite to open `db.sqlite3`, the database file lo
 </details>
 
 <details>
-<summary><b>Task List</b></summary>
+<summary><b>Class Topic Review</b></summary>
 
 - [x] Setup `INSTALLED_APPS` in `settings.py`
 - [x] Define models in `myapp/models.py`

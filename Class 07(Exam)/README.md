@@ -1,0 +1,1 @@
+# Practical exam on tasks from classes 1 to 6

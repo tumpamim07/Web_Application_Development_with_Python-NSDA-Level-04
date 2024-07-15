@@ -1,0 +1,67 @@
+{% extends "home.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h1>Student Table</h1>
+
+<table id="customers">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Department</th>
+    <th>Country</th>
+    <th>Action</th>
+  </tr>
+
+  {% for i in std %}
+    
+  <tr>
+    <td>{{i.FirstName}}</td>    
+    <td>{{i.LastName}}</td>    
+    <td>{{i.Department}}</td>    
+    <td>{{i.Country}}</td>  
+    <td>
+        <a href="{% url 'editstudentpage' i.id %}">Edit</a>
+        <a href="{% url 'deletestudentpage' i.id %}">Delete</a>
+        <a href="">View</a>
+    </td>  
+  </tr>
+
+  {% endfor %}
+</table>
+
+</body>
+</html>
+
+
+
+{% endblock content %}

@@ -1,0 +1,67 @@
+{% extends "home.html" %}
+{% block content %}
+  
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h1>A Teacher Table</h1>
+
+<table id="customers">
+  <tr>
+    <th>Teacher Name</th>
+    <th>Department</th>
+    <th>City</th>
+    <th>Picture</th>
+    <th>Action</th>
+  </tr>
+  {% for i in teacher %}
+    
+  <tr>
+    <td>{{i.TeacherName}}</td>
+    <td>{{i.TDepartment}}</td>
+    <td>{{i.TCity}}</td>
+    <td>
+      <img src="/{{i.TImage}}" alt="" height="80px" width="80px">
+    </td>
+    <td>
+      <a href="{% url 'teacherdelete' i.id %}">Delete</a>
+      <a href="{% url 'teacheredit' i.id %}">Edit</a>
+      <a href="{% url 'teacherview' i.id %}">View</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>
+
+
+
+{% endblock content %}

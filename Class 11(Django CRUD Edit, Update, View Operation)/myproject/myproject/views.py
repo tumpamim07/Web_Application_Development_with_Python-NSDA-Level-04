@@ -59,6 +59,13 @@ def updatestudentpage(request):
         )
         stdn.save()
         return redirect("studentpage")
+
+def viewstudentpage(request,myid):
+    stdnt=StudentModel.objects.filter(id=myid)
+    mydict={
+        'std':stdnt
+    }
+    return render(request,'viewstudentpage.html',mydict)
     
 
 

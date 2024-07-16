@@ -9,6 +9,7 @@ urlpatterns = [
     path('addstudentpage/', addstudentpage,name='addstudentpage'),
     path('deletestudentpage/<str:myid>', deletestudentpage,name='deletestudentpage'),
     path('editstudentpage/<str:myid>', editstudentpage,name='editstudentpage'),
+    path('viewstudentpage/<str:myid>', viewstudentpage,name='viewstudentpage'),
     path('updatestudentpage/', updatestudentpage,name='updatestudentpage'),
     
 ]

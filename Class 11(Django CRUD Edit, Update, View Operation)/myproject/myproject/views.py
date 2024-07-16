@@ -10,6 +10,7 @@ def studentpage(request):
         'std':student
     }
     return render(request,'studentpage.html',mydic)
+    
 
 def addstudentpage(request):
 

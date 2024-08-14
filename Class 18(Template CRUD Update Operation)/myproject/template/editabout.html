@@ -1,0 +1,121 @@
+{% extends 'index.html' %}
+{% block content %}
+  
+<form action="{% url 'updateabout' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container mt-5">
+        <div class="mb-3">
+            <label for="Name" class="form-label">ID</label>
+            <input type="I" class="form-control" id="id" name="myid" value="{{about.id}}" maxlength="100" readonly>
+          </div>
+           <!--Profile Picture -->
+    <div class="mb-3">
+        <label for="Profile_Picture" class="form-label">Profile Picture</label>
+        <br>
+        <input type="hidden" class="form-control" id="preimage" name="preimage" value="{{i.Profile_Picture}}">
+        <img src="/{{about.Profile_Picture}}" alt="" height="100px" width="100px">
+        <input type="file" class="form-control" id="Profile_Picture" value="{{about.Profile_Picture}}"  name="Profile_Picture">
+      </div>
+    
+    <!-- Name -->
+    <div class="mb-3">
+      <label for="Name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="Name" name="Name" maxlength="100" value="{{about.Name}}">
+    </div>
+  
+    <!-- Profession 1 -->
+    <div class="mb-3">
+      <label for="Profession1" class="form-label">Profession 1</label>
+      <input type="text" class="form-control" id="Profession1" name="Profession1" maxlength="100" value="{{about.Profession1}}">
+    </div>
+  
+    <!-- Profession 2 -->
+    <div class="mb-3">
+      <label for="Profession2" class="form-label">Profession 2</label>
+      <input type="text" class="form-control" id="Profession2" name="Profession2" maxlength="100" value="{{about.Profession2}}">
+    </div>
+  
+    <!-- Profession 3 -->
+    <div class="mb-3">
+      <label for="Profession3" class="form-label">Profession 3</label>
+      <input type="text" class="form-control" id="Profession3" name="Profession3" maxlength="100" value="{{about.Profession3}}">
+    </div>
+  
+    <!-- About Details -->
+    <div class="mb-3">
+      <label for="Aboutdetails" class="form-label">About Details</label>
+      <input class="form-control" id="Aboutdetails" name="Aboutdetails" maxlength="500" value="{{about.Aboutdetails}}">
+    </div>
+  
+    <!-- Profession Title 1 -->
+    <div class="mb-3">
+      <label for="ProfessionTitle1" class="form-label">Profession Title 1</label>
+      <input type="text" class="form-control" id="ProfessionTitle1" name="ProfessionTitle1" maxlength="100" value="{{about.ProfessionTitle1}}">
+    </div>
+  
+    <!-- Profession Title 2 -->
+    <div class="mb-3">
+      <label for="ProfessionTitle2" class="form-label">Profession Title 2</label>
+      <input type="text" class="form-control" id="ProfessionTitle2" name="ProfessionTitle2" maxlength="100" value="{{about.ProfessionTitle2}}">
+    </div>
+  
+    <!-- Profession Details -->
+    <div class="mb-3">
+      <label for="ProfessionDetails" class="form-label">Profession Details</label>
+      <input class="form-control" id="ProfessionDetails" name="ProfessionDetails" value="{{about.ProfessionDetails}}">
+    </div>
+  
+    <!-- Profession Paragraph -->
+    <div class="mb-3">
+      <label for="ProfessionPara" class="form-label">Profession Paragraph</label>
+      <input class="form-control" id="ProfessionPara" name="ProfessionPara" value="{{about.ProfessionPara}}">
+    </div>
+  
+    <!-- Birthday -->
+    <div class="mb-3">
+      <label for="Birthday" class="form-label">Birthday</label>
+      <input type="text" class="form-control" id="Birthday" name="Birthday" maxlength="100" value="{{about.Birthday}}">
+    </div>
+  
+    <!-- Website -->
+    <div class="mb-3">
+      <label for="Website" class="form-label">Website</label>
+      <input type="url" class="form-control" id="Website" name="Website" maxlength="100" value="{{about.Website}}">
+    </div>
+  
+    <!-- Phone -->
+    <div class="mb-3">
+      <label for="Phone" class="form-label">Phone</label>
+      <input type="tel" class="form-control" id="Phone" name="Phone" maxlength="100" value="{{about.Phone}}">
+    </div>
+  
+    <!-- City -->
+    <div class="mb-3">
+      <label for="City" class="form-label">City</label>
+      <input type="text" class="form-control" id="City" name="City" maxlength="100" value="{{about.City}}">
+    </div>
+  
+    <!-- Age -->
+    <div class="mb-3">
+      <label for="Age" class="form-label">Age</label>
+      <input type="text" class="form-control" id="Age" name="Age" maxlength="100" value="{{about.Age}}">
+    </div>
+  
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="Email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="Email" name="Email" maxlength="100" value="{{about.Email}}">
+    </div>
+  
+    <!-- Status -->
+    <div class="mb-3">
+      <label for="Status" class="form-label">Freelance Status</label>
+      <input type="text" class="form-control" id="Status" name="Status" maxlength="100" value="{{about.Status}}">
+    </div>
+  
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary" style="background-color: #149DDD; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; font-weight: bold;" class="float-right">Update About</button>
+  </form>
+</div>
+  
+{% endblock content %}

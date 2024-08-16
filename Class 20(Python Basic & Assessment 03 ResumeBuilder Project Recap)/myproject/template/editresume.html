@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+    <form action="{% url 'updateresume' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">ID</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="{{resume.id}}" name="myid" aria-describedby="emailHelp" readonly>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Current Profile Picture:</label> <br>
+          <img src="/{{resume.ProfilePicture}}" width="50px" alt=""><br>
+          <input type="file" class="form-control" id="exampleInputEmail1" name="ProfilePicture" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Full name</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="{{resume.FullName}}" name="full_name" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Address</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="{{resume.Address}}" name="address" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Phone number</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="{{resume.PhoneNumber}}" name="phone_number" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="{{resume.EmailAddress}}" name="email_address" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Career objective</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="{{resume.CareerObjective}}" name="career_objective" aria-describedby="emailHelp">
+        </div>
+        <h4>Education history:</h4>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Degree</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="{{education.Degree}}" name="degree" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Institution</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="{{education.Institution}}" name="institution" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Graduation_year</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="{{education.GraduationYear}}" name="graduation_year" aria-describedby="emailHelp">
+        </div>
+        <h4>Work experience:</h4>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Company</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="{{work.Company}}" name="company" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Position</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="{{work.Position}}" name="position" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Start dates</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="{{work.StartDate}}" name="start_dates" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">End dates</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="{{work.EndDate}}" name="end_dates" aria-describedby="emailHelp">
+        </div>
+        <h4>Skills:</h4>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Hard Skills</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="{{resume.HardSkills}}" name="hard_Skills" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Soft Skills</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="{{resume.SoftSkills}}" name="soft_Skills" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Certifications</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="{{resume.Certifications}}" name="certifications" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Projects</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="{{resume.Projects}}" name="projects" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">References</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="{{resume.References}}" name="references" aria-describedby="emailHelp">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Resume</button>
+      </form>
+
+</div>
+{% endblock content %}
+    

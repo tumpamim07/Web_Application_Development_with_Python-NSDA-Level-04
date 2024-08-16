@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    /* Custom styles */
+    body {
+        background-color: #f8f9fa;
+        color: #343a40;
+    }
+    .section-title {
+        color: #007bff;
+    }
+    .section-heading {
+        color: #28a745;
+    }
+    .profile-picture {
+        border-radius: 50%;
+        border: 5px solid #17a2b8;
+        max-width: 200px;
+        height: auto;
+    }
+    .list-group-item {
+        background-color: #f1f1f1;
+        border-color: #dee2e6;
+    }
+</style>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="/{{ resume.ProfilePicture }}" class="img-fluid profile-picture" alt="Profile Picture">
+        </div>
+        <div class="col-md-8">
+            <h1 class="section-heading">{{ resume.FullName }}</h1>
+            <p><strong>Address:</strong> {{ resume.Address }}</p>
+            <p><strong>Phone:</strong> {{ resume.PhoneNumber }}</p>
+            <p><strong>Email:</strong> {{ resume.EmailAddress }}</p>
+            <hr>
+            <h3 class="section-title">Career Objective</h3>
+            <p>{{ resume.CareerObjective }}</p>
+        </div>
+    </div>
+    <hr>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h3 class="section-title">Education</h3>
+            <ul class="list-group">
+                <li class="list-group-item">{{ education.Degree }} - {{ education.Institution }} ({{ education.GraduationYear }})</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h3 class="section-title">Work Experience</h3>
+            <ul class="list-group">
+                <li class="list-group-item">{{ work.Position }} at {{ work.Company }} ({{ work.StartDate }} - {{ work.EndDate }})</li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h3 class="section-title">Hard Skills</h3>
+            <p>{{ resume.HardSkills }}</p>
+        </div>
+        <div class="col-md-6">
+            <h3 class="section-title">Soft Skills</h3>
+            <p>{{ resume.SoftSkills }}</p>
+        </div>
+    </div>
+    <hr>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h3 class="section-title">Certifications</h3>
+            <p>{{ resume.Certifications }}</p>
+        </div>
+        <div class="col-md-6">
+            <h3 class="section-title">Projects</h3>
+            <p>{{ resume.Projects }}</p>
+        </div>
+    </div>
+    <hr>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h3 class="section-title">References</h3>
+            <p>{{ resume.References }}</p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

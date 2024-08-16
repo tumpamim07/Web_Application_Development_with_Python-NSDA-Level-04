@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Profile Picture</th>
+            <th scope="col">Full name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        
+        {% for i in resume %}
+        <tbody>
+          <tr>
+            <td>
+              <img src="/{{i.ProfilePicture}}" width="50px" alt="">
+            </td>
+            <td>{{i.FullName}}</td>
+            <td>{{i.Address}}</td>
+            <td>{{i.PhoneNumber}}</td>
+            <td>
+              <a href="{% url 'deleteresume' i.id %}">Delete</a>
+              <a href="{% url 'editresume' i.id %}">Edit</a>
+              <a href="{% url 'viewresume' i.id %}">View</a>
+            </td>
+          </tr>
+        </tbody>
+        {% endfor %}
+        
+      </table>
+{% endblock content %}

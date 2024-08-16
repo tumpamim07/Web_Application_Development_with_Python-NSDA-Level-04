@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+    <form action="{% url 'addresume' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Profile Picture</label>
+          <input type="file" class="form-control" id="exampleInputEmail1" name="ProfilePicture" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Full name</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="FullName" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Address</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="Address" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Phone number</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="PhoneNumber" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="EmailAddress" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Career objective</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="CareerObjective" aria-describedby="emailHelp">
+        </div>
+        <h4>Education history:</h4>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Degree</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="Degree" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Institution</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="Institution" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Graduation Year</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="GraduationYear" aria-describedby="emailHelp">
+        </div>
+        <h4>Work experience:</h4>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Company</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="Company" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Position</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="Position" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Start dates</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="StartDate" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">End dates</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="EndDate" aria-describedby="emailHelp">
+        </div>
+        <h4>Skills:</h4>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Hard Skills</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="HardSkills" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Soft Skills</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="SoftSkills" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Certifications</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="Certifications" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Projects</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="Projects" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">References</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="References" aria-describedby="emailHelp">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+</div>
+{% endblock content %}
+    

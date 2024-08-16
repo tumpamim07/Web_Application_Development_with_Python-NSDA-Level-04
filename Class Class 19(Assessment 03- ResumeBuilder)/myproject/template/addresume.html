@@ -1,0 +1,115 @@
+{% extends "home.html" %}
+{% block content %}
+ 
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+
+<h3>Add Resume Form</h3>
+
+<div>
+  <form action="{% url 'addresume' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %} 
+    <h1>Personal Information</h1>
+    <label for="fname">Full Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Address</label>
+    <input type="text" id="lname" name="address" placeholder="Your last name..">
+    
+    <label for="lname">Email address</label>
+    <input type="text" id="lname" name="email" placeholder="Your last name..">
+    
+    <label for="lname">Phone Number</label>
+    <input type="text" id="lname" name="phone" placeholder="Your last name..">
+    
+    <label for="lname">Career objective</label>
+    <input type="text" id="lname" name="career" placeholder="Your last name..">
+
+    <label for="lname">Certifications</label>
+    <input type="text" id="lname" name="certificate" placeholder="Your last name..">
+
+    <label for="lname">Projects</label>
+    <input type="text" id="lname" name="project" placeholder="Your last name..">
+
+    <label for="lname">References</label>
+    <input type="text" id="lname" name="reference" placeholder="Your last name..">
+
+    <label for="lname">Profile picture</label>
+    <input type="file" id="lname" name="propic" placeholder="Your last name..">
+   
+
+    <h1>Education history</h1>
+    <label for="lname">Degree</label>
+    <input type="text" id="lname" name="degree" placeholder="Your last name..">
+
+    <label for="lname">Institution</label>
+    <input type="text" id="lname" name="institute" placeholder="Your last name..">
+
+    <label for="lname">Graduation Year</label>
+    <input type="text" id="lname" name="graduation" placeholder="Your last name..">
+
+    <h1>Work Experience</h1>
+
+    <label for="lname">Company</label>
+    <input type="text" id="lname" name="company" placeholder="Your last name..">
+
+    <label for="lname">Position</label>
+    <input type="text" id="lname" name="position" placeholder="Your last name..">
+
+    <label for="lname">Start Date</label>
+    <input type="date" id="lname" name="start" placeholder="Your last name..">
+
+    <label for="lname">End Date</label>
+    <input type="date" id="lname" name="end" placeholder="Your last name..">
+
+    <h1>Skills</h1>
+    
+    <label for="lname">Soft Skills</label>
+    <input type="text" id="lname" name="soft" placeholder="Your last name..">
+
+    <label for="lname">Hard Skills</label>
+    <input type="text" id="lname" name="hard" placeholder="Your last name..">
+
+    <input type="submit" value="Add Resume">
+  </form>
+</div>
+
+</body>
+</html>
+
+
+
+{% endblock content %}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mb-4">Sign Up</h2>
+        <form action="{% url 'SignupPage' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Display Name</label>
+                <input type="text" class="form-control" name="displayname" id="displayname" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="username">First Name</label>
+                <input type="text" class="form-control" name="firstname" id="username" placeholder="Enter firstname">
+            </div>
+            <div class="form-group">
+                <label for="username">Last Name</label>
+                <input type="text" class="form-control" name="lastname" id="username" placeholder="Enter lastname">
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" name="username" id="username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="Confirm Password">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="email">Address</label>
+                <input type="adress" class="form-control" name="address" id="email" placeholder="Enter address">
+            </div>
+            <div class="form-group">
+                <label for="email">Date of Birth</label>
+                <input type="date" class="form-control" name="dob" id="dob" placeholder="Enter dob">
+            </div>
+            <div class="form-group">
+                <label for="user_type">Blood</label>
+                <select class="form-control" id="user_type" name="blood">
+                    <option value="customer">Select Blood Type</option>
+                    <option value="a+">A+</option>
+                    <option value="a-">A-</option>
+                    <option value="b+">B+</option>
+                    <option value="b-">B-</option>
+                    <option value="ab+">AB+</option>
+                    <option value="ab-">AB-</option>
+                    <option value="o+">O+</option>
+                    <option value="o-">O-</option>
+                    
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="user_type">Gender</label>
+                <select class="form-control" id="user_type" name="gender">
+                    <option value="gender">Select Gender Type</option>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="user_type">User Type</label>
+                <select class="form-control" id="user_type" name="user_type">
+                    <option value="customer">Select User Type</option>
+                    <option value="job_recruiter">Job Recruiter</option>
+                    <option value="job_seeker">Job Seeker</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="email">Image</label>
+                <input type="file" class="form-control" name="image" id="dob" placeholder="Enter dob">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+            <div class="text-center mt-3">
+                <p>Already have an account? <a href="{% url 'SignInPage' %}">Sign In</a></p>
+            </div>
+
+            
+        </form>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

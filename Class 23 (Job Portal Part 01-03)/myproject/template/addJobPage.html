@@ -1,0 +1,66 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>Job Application Form</h2>
+    <form action="" method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="jobTitle">Job Title</label>
+        <input type="text" class="form-control" id="jobTitle" name="jobTitle">
+      </div>
+      <div class="form-group">
+        <label for="companyName">Company Name</label>
+        <input type="text" class="form-control" id="companyName" name="companyName">
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" class="form-control" id="address" name="address">
+      </div>
+      <div class="form-group">
+        <label for="companyDescription">Company Description</label>
+        <textarea class="form-control" id="companyDescription" name="companyDescription" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="jobDescription">Job Description</label>
+        <textarea class="form-control" id="jobDescription" name="jobDescription" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="qualification">Qualification</label>
+        <input type="text" class="form-control" id="qualification" name="qualification">
+      </div>
+      <div class="form-group">
+        <label for="salaryInformation">Salary Information</label>
+        <input type="text" class="form-control" id="salaryInformation" name="salaryInformation">
+      </div>
+      <div class="form-group">
+        <label for="deadline">Deadline</label>
+        <input type="date" class="form-control" id="deadline" name="deadline">
+      </div>
+      <div class="form-group">
+        <label for="designation">Designation</label>
+        <input type="text" class="form-control" id="designation" name="designation">
+      </div>
+      <div class="form-group">
+        <label for="experience">Experience</label>
+        <input type="text" class="form-control" id="experience" name="experience">
+      </div>
+      <button type="submit" class="btn btn-primary">Add Job</button>
+    </form>
+  </div>
+</body>
+</html>
+
+
+{% endblock content %}
+    

@@ -1,0 +1,70 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>Job Application Form</h2>
+    <form action="{% url 'updatejob' %}" method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="id">ID</label>
+        <input type="text" class="form-control" id="id" name="id" value="{{jobs.id}}" readonly>
+      </div>
+      <div class="form-group">
+        <label for="jobTitle">Job Title</label>
+        <input type="text" class="form-control" id="jobTitle" name="jobTitle" value="{{jobs.JobTitle}}">
+      </div>
+      <div class="form-group">
+        <label for="companyName">Company Name</label>
+        <input type="text" class="form-control" id="companyName" name="companyName" value="{{jobs.CompanyName}}">
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" class="form-control" id="address" name="address" value="{{jobs.Address}}">
+      </div>
+      <div class="form-group">
+        <label for="companyDescription">Company Description</label>
+        <input class="form-control" id="companyDescription" name="companyDescription" value="{{jobs.CompanyDescription}}" rows="3"></input>
+      </div>
+      <div class="form-group">
+        <label for="jobDescription">Job Description</label>
+        <input class="form-control" id="jobDescription" name="jobDescription" value="{{jobs.JobDescription}}" rows="3"></input>
+      </div>
+      <div class="form-group">
+        <label for="qualification">Qualification</label>
+        <input type="text" class="form-control" id="qualification" name="qualification" value="{{jobs.Qualification}}">
+      </div>
+      <div class="form-group">
+        <label for="salaryInformation">Salary Information</label>
+        <input type="text" class="form-control" id="salaryInformation" name="salaryInformation" value="{{jobs.SalaryInformation}}">
+      </div>
+      <div class="form-group">
+        <label for="deadline">Deadline</label>
+        <input type="date" class="form-control" id="deadline" name="deadline" value="{{jobs.Deadline}}">
+      </div>
+      <div class="form-group">
+        <label for="designation">Designation</label>
+        <input type="text" class="form-control" id="designation" name="designation" value="{{jobs.Designation}}">
+      </div>
+      <div class="form-group">
+        <label for="experience">Experience</label>
+        <input type="text" class="form-control" id="experience" name="experience" value="{{jobs.Experience}}">
+      </div>
+      <button type="submit" class="btn btn-primary">Update Job</button>
+    </form>
+  </div>
+</body>
+</html>
+
+
+{% endblock content %}
+    

@@ -1,0 +1,83 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom styles */
+    .profile-image {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .profile-image img {
+      width: 150px; /* Adjust as needed */
+      height: 150px; /* Adjust as needed */
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12 profile-image">
+            <img src="/{{user.Image}}" alt="Profile Picture">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <h5 class="card-title" >Display Name</h5>
+            <p class="card-text">{{user.display_name}}</p>
+          </div>
+          <div class="col-md-6">
+            <h5 class="card-title" >Username</h5>
+            <p class="card-text">{{user.username}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="card-title">Email</h5>
+            <p class="card-text">{{user.email}}</p>
+          </div>
+          <div class="col-md-6">
+            <h5 class="card-title">Date of Birth</h5>
+            <p class="card-text">{{user.DOB}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="card-title">Gender</h5>
+            <p class="card-text">{{user.gender}}</p>
+          </div>
+          <div class="col-md-6">
+            <h5 class="card-title">Blood Type</h5>
+            <p class="card-text">{{user.blood}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="card-title">User Type</h5>
+            <p class="card-text">{{user.user_type}}</p>
+          </div>
+          <div class="col-md-6">
+            <h5 class="card-title">Address</h5>
+            <p class="card-text">{{user.address}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+{% endblock content %}
+    

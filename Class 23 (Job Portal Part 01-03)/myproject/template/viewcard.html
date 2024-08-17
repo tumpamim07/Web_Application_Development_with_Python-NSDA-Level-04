@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Job Details</h2>
+        <div class="card">
+            
+            {% for i in job %}
+            <div class="card-body">
+                <h5 class="card-title"><strong>Job Title:</strong> {{ i.JobTitle }}</h5>
+                <p class="card-text"><strong>Company Name:</strong> {{ i.CompanyName }}</p>
+                <p class="card-text"><strong>Address:</strong> {{ i.Address }}</p>
+                <p class="card-text"><strong>Company Description:</strong> {{ i.CompanyDescription }}</p>
+                <p class="card-text"><strong>Job Description:</strong> {{ i.JobDescription }}</p>
+                <p class="card-text"><strong>Qualification:</strong> {{ i.Qualification }}</p>
+                <p class="card-text"><strong>Salary Information:</strong> {{ i.SalaryInformation }}</p>
+                <p class="card-text"><strong>Deadline:</strong> {{ i.Deadline }}</p>
+                <p class="card-text"><strong>Designation:</strong> {{ i.Designation }}</p>
+                <p class="card-text"><strong>Experience:</strong> {{ i.Experience }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="{% url 'ViewallJob' %}" class="btn btn-primary mt-3">Back to Job List</a>
+    </div>
+</body>
+</html>
+
+{% endblock content %}

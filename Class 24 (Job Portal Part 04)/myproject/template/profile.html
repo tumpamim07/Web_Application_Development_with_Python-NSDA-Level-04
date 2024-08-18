@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        h2 {
+            color: #555;
+        }
+        .profile-info {
+            margin-bottom: 20px;
+        }
+        .profile-info p {
+            margin: 10px 0;
+        }
+        .profile-info strong {
+            color: #007bff;
+        }
+        .profile-picture {
+            text-align: center;
+        }
+        .profile-picture img {
+            max-width: 200px;
+            border-radius: 50%;
+            border: 4px solid #007bff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Profile</h1>
+        <div class="profile-picture">
+            <img src="/{{ user.profile_picture }}" alt="Profile Picture">
+        </div>
+        <div class="profile-info">
+            <p><strong>First Name:</strong> {{ user.fname }}</p>
+            <p><strong>Last Name:</strong> {{ user.lname }}</p>
+            <p><strong>User Name:</strong> {{ user.username }}</p>
+            <p><strong>Date of Birth:</strong> {{ user.date_of_birth }}</p>
+            <p><strong>Address:</strong> {{ user.address }}</p>
+            <p><strong>Blood Group:</strong> {{ user.blood_group }}</p>
+            <p><strong>User Type:</strong> {{ user.user_type }}</p>
+        </div>
+
+    </div>
+</body>
+</html>
+
+
+{% endblock content %}

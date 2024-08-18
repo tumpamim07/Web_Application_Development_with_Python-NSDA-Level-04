@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.job-listings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.job {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.job:hover {
+    transform: translateY(-5px);
+}
+
+.job h2 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.job p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.job .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.actions button,
+.actions button a {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: white;
+    text-decoration: none;
+}
+
+.actions button:hover,
+.actions button a:hover {
+    opacity: 0.9;
+}
+
+.actions .update,
+.actions .update a {
+    background-color: #007bff;
+}
+
+.actions .delete,
+.actions .delete a {
+    background-color: #dc3545;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Job Listings</h1>
+    <div class="job-listings">
+        
+        {% for job in jobs %}
+        
+        {% if user.username == job.Recruiter %}
+        <div class="job">
+            <h2>{{ job.Job_title }}</h2>
+            <p><strong>Company:</strong> {{ job.Company_name }}</p>
+            <p><strong>Location:</strong> {{ job.Address }}</p>
+            <p><strong>Company Description:</strong> {{ job.Company_description }}</p>
+            <p><strong>Job Description:</strong> {{ job.Job_description }}</p>
+            <p><strong>Qualification:</strong> {{ job.Qualification }}</p>
+            <p><strong>Salary Information:</strong> {{ job.Salary_information }}</p>
+            <p><strong>Deadline:</strong> {{ job.Deadline }}</p>
+            <p><strong>Designation:</strong> {{ job.Designation }}</p>
+            <p><strong>Experience:</strong> {{ job.Experience }}</p>
+            <div class="actions">
+                {% if user.user_type == 'recruiter' %}
+                <button class="update"> <a href="{% url 'editjob' job.id %}" >Update</a></button>
+                <button class="delete"><a href="{% url 'deletejob' job.id %}" >Delete</a></button> 
+                {% endif %}
+            </div>
+        </div>
+        {% elif user.user_type == 'seeker' %}
+        <div class="job">
+            <h2>{{ job.Job_title }}</h2>
+            <p><strong>Recruiter:</strong> {{ job.Recruiter }}</p>
+            <p><strong>Company:</strong> {{ job.Company_name }}</p>
+            <p><strong>Location:</strong> {{ job.Address }}</p>
+            <p><strong>Company Description:</strong> {{ job.Company_description }}</p>
+            <p><strong>Job Description:</strong> {{ job.Job_description }}</p>
+            <p><strong>Qualification:</strong> {{ job.Qualification }}</p>
+            <p><strong>Salary Information:</strong> {{ job.Salary_information }}</p>
+            <p><strong>Deadline:</strong> {{ job.Deadline }}</p>
+            <p><strong>Designation:</strong> {{ job.Designation }}</p>
+            <p><strong>Experience:</strong> {{ job.Experience }}</p>
+            <div class="actions">
+                {% if user.user_type == 'recruiter' %}
+                <button class="update"> <a href="{% url 'editjob' job.id %}" >Update</a></button>
+                <button class="delete"><a href="{% url 'deletejob' job.id %}" >Delete</a></button> 
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+     {% endfor %}
+
+            
+
+        
+
+
+    </div>
+</body>
+</html>
+
+{% endblock content %}

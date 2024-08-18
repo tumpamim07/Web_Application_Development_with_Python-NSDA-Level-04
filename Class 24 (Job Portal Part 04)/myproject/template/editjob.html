@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+</style>
+<body>
+
+<div>
+  <form action="{% url 'updatejob' %}" method="POST">
+    {% csrf_token %}
+    <label for="fname">ID</label>
+    <input type="text" id="fname" value="{{jobs.id}}" name="myid" placeholder="Your Job title.." readonly>
+    <label for="fname">Job title</label>
+    <input type="text" id="fname" value="{{jobs.Job_title}}" name="Job_title" placeholder="Your Job title..">
+    <label for="fname">Company name</label>
+    <input type="text" id="fname" value="{{jobs.Company_name}}" name="Company_name" placeholder="Your Company name..">
+    <label for="fname">Address</label>
+    <input type="text" id="fname" value="{{jobs.Address}}" name="Address" placeholder="Your Address..">
+    <label for="fname">Company description</label>
+    <textarea id="subject" name="Company_description" placeholder="Company description.." style="height:100px">{{jobs.Company_description}}</textarea>
+    <label for="fname">Job description</label>
+    <textarea id="subject" name="Job_description" placeholder="Job description.." style="height:100px">{{jobs.Job_description}}</textarea>
+    <label for="fname">Qualification</label>
+    <input type="text" id="fname" value="{{jobs.Qualification}}" name="Qualification" placeholder="Your Qualification..">
+    <label for="fname">Salary information</label>
+    <input type="text" id="fname" value="{{jobs.Salary_information}}" name="Salary_information" placeholder="Salary information..">
+    <label for="fname">Current Deadline</label>
+    <input type="text" id="fname" value="{{jobs.Deadline}}" readonly>
+    <label for="fname">Update Deadline</label><br>
+    <input type="date" id="fname" name="Deadline" placeholder="Deadline"><br>
+    <label for="fname">Designation</label>
+    <input type="text" id="fname" value="{{jobs.Designation}}" name="Designation" placeholder="Designation..">
+    <label for="fname">Experience</label>
+    <input type="text" id="fname" value="{{jobs.Experience}}" name="Experience" placeholder="Experience..">
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
+
+{% endblock content %}

@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<table id="customers">
+  <tr>
+    <th>Recruiter</th>
+    <th>Job title</th>
+    <th>Company name</th>
+    <th>Address</th>
+    <th>Company description</th>
+    <th>Job description</th>
+    <th>Qualification</th>
+    <th>Salary information</th>
+    <th>Deadline</th>
+    <th>Designation</th>
+    <th>Experience</th>
+    <th>Action</th>
+  </tr>
+  {% for i in job %}
+  {% if user.username == i.Recruiter %}
+    <tr>
+        <td>{{i.Recruiter}}</td>
+        <td>{{i.Job_title}}</td>
+        <td>{{i.Company_name}}</td>
+        <td>{{i.Address}}</td>
+        <td>{{i.Company_description}}</td>
+        <td>{{i.Job_description}}</td>
+        <td>{{i.Qualification}}</td>
+        <td>{{i.Salary_information}}</td>
+        <td>{{i.Deadline}}</td>
+        <td>{{i.Designation}}</td>
+        <td>{{i.Experience}}</td>
+        <td>
+          
+          {% if user.user_type == 'recruiter' %}
+          <a href="{% url 'editjob' i.id %}">Edit</a>
+          <a href="{% url 'deletejob' i.id %}">Delete</a>
+          {% endif %}
+          <a href="{% url 'viewjob' %}">View</a>
+
+        </td>
+    </tr>
+    {% elif user.user_type == 'seeker' %}
+    <tr>
+      <td>{{i.Recruiter}}</td>
+      <td>{{i.Job_title}}</td>
+      <td>{{i.Company_name}}</td>
+      <td>{{i.Address}}</td>
+      <td>{{i.Company_description}}</td>
+      <td>{{i.Job_description}}</td>
+      <td>{{i.Qualification}}</td>
+      <td>{{i.Salary_information}}</td>
+      <td>{{i.Deadline}}</td>
+      <td>{{i.Designation}}</td>
+      <td>{{i.Experience}}</td>
+      <td>
+        
+        {% if user.user_type == 'recruiter' %}
+        <a href="{% url 'editjob' i.id %}">Edit</a>
+        <a href="{% url 'deletejob' i.id %}">Delete</a>
+        {% endif %}
+        <a href="{% url 'viewjob' %}">View</a>
+
+      </td>
+    {% endif %}
+  {% endfor %}
+    
+</table>
+
+</body>
+</html>
+
+{% endblock content %}
+    

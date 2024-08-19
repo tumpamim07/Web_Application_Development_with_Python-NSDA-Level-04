@@ -1,0 +1,18 @@
+<ul>
+    <li><a href="{% url 'dashboardPage' %}">Home</a></li>
+    <li><a href="{% url 'joblist' %}">Job List</a></li>
+
+    {% if user.user_type == 'job_recruiter' %}
+     
+    <li><a href="{% url 'addjob' %}">Add Job</a></li>
+    
+
+    {% elif user.job_seeker == job_seeker %}
+
+    <li><a href="{% url 'viewjob' %}">View Job</a></li>
+
+    {% endif %}
+
+    <li style="float:right"><a class="active" href="{% url 'LogoutPage' %}">Logout</a></li>
+    <li style="float:right"><a  href="{% url 'profile' %}">Profile</a></li>
+  </ul>

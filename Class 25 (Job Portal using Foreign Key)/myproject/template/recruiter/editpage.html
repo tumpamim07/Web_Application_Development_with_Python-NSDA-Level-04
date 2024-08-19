@@ -1,0 +1,85 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Job Application Form</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Job Application Form</h2>
+    <form action="{% url 'updatepage' %}" method="POST">
+        {% csrf_token %}
+        
+        {% for i in edits %}
+            
+        
+            
+      <div class="form-group">
+            <label for="jobTitle">Id:</label>
+            <input type="text" class="form-control" id="jobTitle" placeholder="Enter job title" value="{{i.id}}" name="id" readonly>
+     </div>
+      <div class="form-group">
+        <label for="jobTitle">Job Title:</label>
+        <input type="text" class="form-control" id="jobTitle" placeholder="Enter job title" value="{{i.Job_title}}" name="jobTitle">
+      </div>
+      <div class="form-group">
+        <label for="companyName">Company Name:</label>
+        <input type="text" class="form-control" id="companyName" placeholder="Enter company name" value="{{i.company_name}}" name="companyName">
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" class="form-control" id="address" placeholder="Enter address" value="{{i.address}}" name="address">
+      </div>
+      <div class="form-group">
+        <label for="companyDescription">Company Description:</label>
+        <input type="text" class="form-control" id="companyDescription" placeholder="Enter company description" value="{{i.company_description}}" name="companyDescription">
+      </div>
+      <div class="form-group">
+        <label for="jobDescription">Job Description:</label>
+        <input type="text" class="form-control" id="jobDescription" placeholder="Enter job description" value="{{i.job_description}}" name="jobDescription">
+      </div>
+      <div class="form-group">
+        <label for="qualification">Qualification:</label>
+        <input type="text" class="form-control" id="qualification" placeholder="Enter qualification" value="{{i.qualification}}" name="qualification">
+      </div>
+      <div class="form-group">
+        <label for="salary">Salary:</label>
+        <input type="text" class="form-control" id="salary" placeholder="Enter salary" value="{{i.salary}}" name="salary">
+      </div>
+      <div class="form-group">
+        <label for="joiningDate">Joining Date:</label>
+        <input type="text" class="form-control" id="joiningDate" placeholder="Enter joining date" value="{{i.joiningdate}}" name="joiningDate">
+      </div>
+      <div class="form-group">
+        <label for="designation">Designation:</label>
+        <input type="text" class="form-control" id="designation" placeholder="Enter designation" value="{{i.designation}}" name="designation">
+      </div>
+      <div class="form-group">
+        <label for="experience">Experience:</label>
+        <input type="text" class="form-control" id="experience" placeholder="Enter experience" value="{{i.experience}}" value="{{i.id}}" name="experience">
+      </div>
+      <button type="submit" class="btn btn-primary">Update Form</button>
+
+      {% endfor %}
+    </form>
+  </div>
+  <!-- Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+    
+    
+{% endblock content %}
+    

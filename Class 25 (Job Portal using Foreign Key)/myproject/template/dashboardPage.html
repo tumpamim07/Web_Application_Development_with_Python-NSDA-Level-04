@@ -1,0 +1,85 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h1>Welcome {{user.username}}</h1>
+<h1>Welcome {{user.user_type}}</h1>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h1>Job List</h1>
+
+<table id="customers">
+  <tr>
+    <th>Job Title</th>
+    <th>Company Name</th>
+    <th>Address</th>
+    <th>Job Description</th>
+    <th>Salary</th>
+    <th>Joining Date</th>
+    <th>Designation</th>
+    <th>Action</th>
+  </tr>
+
+  
+  {% for i in job %} 
+  <tr>
+    <td>{{i.Job_title}}</td>
+    <td>{{i.company_name}}</td>
+    <td>{{i.address}}</td>
+    <td>{{i.job_description}}</td>
+    <td>{{i.salary}}</td>
+    <td>{{i.joiningdate}}</td>
+    <td>{{i.designation}}</td>
+    <td>
+      
+      {% if user.user_type == 'job_recruiter' %}
+      <a href="{% url 'deletepage' i.id %}">Delete</a>
+      <a href="{% url 'editpage' i.id %}">Edit</a>
+      {% endif %}
+        <a href="{% url 'viewpage' i.id %}">View</a>
+    </td>
+  </tr>
+
+  {% endfor %}
+
+</table>
+
+</body>
+</html>
+
+
+
+    
+{% endblock content %}
+
+
+    

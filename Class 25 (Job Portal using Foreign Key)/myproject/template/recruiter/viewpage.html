@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+
+{% for i in views %}
+    
+    
+
+<div class="card">
+    <div class="card-header">
+      Job Details
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ job_title }}</h5>
+      <p class="card-text"><strong>Job Title:</strong> {{ i.Job_title }}</p>
+      <p class="card-text"><strong>Company Name:</strong> {{ i.company_name }}</p>
+      <p class="card-text"><strong>Address:</strong> {{ i.address }}</p>
+      <p class="card-text"><strong>Company Description:</strong> {{ i.company_description }}</p>
+      <p class="card-text"><strong>Job Description:</strong> {{ i.job_description }}</p>
+      <p class="card-text"><strong>Qualification:</strong> {{ i.qualification }}</p>
+      <p class="card-text"><strong>Salary:</strong> {{ i.salary }}</p>
+      <p class="card-text"><strong>Joining Date:</strong> {{ i.joiningdate }}</p>
+      <p class="card-text"><strong>Designation:</strong> {{ i.designation }}</p>
+      <p class="card-text"><strong>Experience:</strong> {{ i.experience }}</p>
+    </div>
+  </div>
+  
+  {% endfor %}
+    
+{% endblock content %}
+    

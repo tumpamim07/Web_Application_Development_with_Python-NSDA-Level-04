@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>{{ job.JobTitle }}</h1>
+    <p><strong>Created by :</strong> {{ job.Created_by }}</p>
+    <p><strong>Company Name:</strong> {{ job.CompanyName }}</p>
+    <p><strong>Address:</strong> {{ job.Address }}</p>
+    <p><strong>Company Description:</strong> {{ job.CompanyDescription }}</p>
+    <p><strong>Job Description:</strong> {{ job.JobDescription }}</p>
+    <p><strong>Qualification:</strong> {{ job.Qualification }}</p>
+    <p><strong>Salary Information:</strong> {{ job.SalaryInformation }}</p>
+    <p><strong>Deadline:</strong> {{ job.Deadline }}</p>
+    <p><strong>Designation:</strong> {{ job.Designation }}</p>
+    <p><strong>Experience Required:</strong> {{ job.Experience }}</p>
+</body>
+</html>
+
+{% endblock content %}

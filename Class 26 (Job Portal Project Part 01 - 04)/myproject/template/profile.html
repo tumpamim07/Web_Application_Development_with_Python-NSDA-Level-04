@@ -1,0 +1,92 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+        .profile-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .profile-picture {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .user-info {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>User Profile</h1>
+        
+        <div class="profile-picture">
+            {% if user.profilePicture %}
+            <img src="/{{ user.profilePicture }}" alt="Profile Picture">
+            {% else %}
+            <p>No profile picture available.</p>
+            {% endif %}
+        </div>
+
+        <div class="user-info">
+            <label>First Name:</label>
+            <p>{{ user.first_name }}</p>
+
+            <label>Last Name:</label>
+            <p>{{ user.last_name }}</p>
+
+            <label>Username:</label>
+            <p>{{ user.username }}</p>
+
+            <label>Email:</label>
+            <p>{{ user.email }}</p>
+
+            <label>Date of Birth:</label>
+            <p>{{ user.dob }}</p>
+
+            <label>Address:</label>
+            <p>{{ user.address }}</p>
+
+            <label>Blood Group:</label>
+            <p>{{ user.bloodGroup }}</p>
+
+            <label>User Type:</label>
+            <p>{{ user.usertype }}</p>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock content %}
+

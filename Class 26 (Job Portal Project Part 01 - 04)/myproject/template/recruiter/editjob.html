@@ -1,0 +1,74 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Job</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2 class="text-center">Update Job</h2>
+                <form action="{% url 'updatejob' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="jobTitle" class="form-label">Job ID</label>
+                        <input type="text" class="form-control" id="jobTitle" name="myid" value="{{job.id}}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="jobTitle" class="form-label">Job Title</label>
+                        <input type="text" class="form-control" id="jobTitle" name="JobTitle" value="{{job.id}}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="companyName" class="form-label">Company Name</label>
+                        <input type="text" class="form-control" id="companyName" name="CompanyName" value="{{job.CompanyName}}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address" name="Address" value="{{job.Address}}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="companyDescription" class="form-label">Company Description</label>
+                        <textarea class="form-control" id="companyDescription" name="CompanyDescription" value="{{job.CompanyDescription}}" rows="4"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="jobDescription" class="form-label">Job Description</label>
+                        <textarea class="form-control" id="jobDescription" name="jobDescription" value="{{job.jobDescription}}" rows="4"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="qualification" class="form-label">Qualification</label>
+                        <input type="text" class="form-control" id="qualification"  value="{{job.Qualification}}" name="Qualification">
+                    </div>
+                    <div class="mb-3">
+                        <label for="salaryInformation" class="form-label">Salary Information</label>
+                        <input type="text" class="form-control" id="salaryInformation" value="{{job.SalaryInformation}}" name="SalaryInformation">
+                    </div>
+                    <div class="mb-3">
+                        <label for="deadline" class="form-label">Application Deadline</label>
+                        <input type="date" class="form-control" id="deadline" value="{{job.Deadline}}" name="Deadline">
+                    </div>
+                    <div class="mb-3">
+                        <label for="designation" class="form-label">Designation</label>
+                        <input type="text" class="form-control" id="designation" value="{{job.Designation}}" name="Designation">
+                    </div>
+                    <div class="mb-3">
+                        <label for="experience" class="form-label">Experience</label>
+                        <input type="text" class="form-control" id="experience" value="{{job.Experience}}" name="Experience">
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Update Job</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+{% endblock content %}

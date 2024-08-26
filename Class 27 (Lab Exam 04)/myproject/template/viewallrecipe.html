@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .recipe {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .recipe img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .recipe-info {
+            margin-top: 10px;
+        }
+        .recipe-info label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Recipes</h1>
+        {% for recipe in recipes %}
+        <div class="recipe">
+            <h2>{{ recipe.RecipeTitle }} by {{recipe.created_by.username}}</h2>
+            <img src="/{{ recipe.RecipeImage }}" width="200px" alt="{{ recipe.recipe_title }}">
+            <div class="recipe-info">
+                <label>Ingredients:</label>
+                <p>{{ recipe.Ingredients }}</p>
+            </div>
+            <div class="recipe-info">
+                <label>Instructions:</label>
+                <p>{{ recipe.Instructions }}</p>
+            </div>
+            <div class="recipe-info">
+                <label>Preparation Time:</label>
+                <p>{{ recipe.PreparationTime }}</p>
+            </div>
+            <div class="recipe-info">
+                <label>Cooking Time:</label>
+                <p>{{ recipe.CookingTime }}</p>
+            </div>
+            <div class="recipe-info">
+                <label>Total Time:</label>
+                <p>{{ recipe.TotalTime }}</p>
+            </div>
+            <div class="recipe-info">
+                <label>Difficulty Level:</label>
+                <p>{{ recipe.DifficultyLevel }}</p>
+            </div>
+            <div class="recipe-info">
+                <label>Nutritional Info:</label>
+                <p>{{ recipe.NutritionalInfo }}</p>
+            </div>
+            <div class="recipe-info">
+                <label>Total Calorie:</label>
+                <p>{{ recipe.TotalCalorie }}</p>
+            </div>
+            <div class="recipe-info">
+                <label>Recipe Category:</label>
+                <p>{{ recipe.RecipeCategory }}</p>
+            </div>
+            <div class="recipe-info">
+                <label>User Tags:</label>
+                <p>{{ recipe.UserTags }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
+{% endblock content %}

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2 class="text-center">Add Recipe</h2>
+                <form action="{% url 'addrecipe' %}" method="POST" enctype="multipart/form-data">
+                  {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="RecipeTitle" class="form-label">Recipe Title</label>
+                        <input type="text" class="form-control" id="RecipeTitle" name="RecipeTitle" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Ingredients" class="form-label">Ingredients</label>
+                        <textarea class="form-control" id="Ingredients" name="Ingredients" rows="4" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Instructions" class="form-label">Instructions</label>
+                        <textarea class="form-control" id="Instructions" name="Instructions" rows="4" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="PreparationTime" class="form-label">Preparation Time</label>
+                        <input type="text" class="form-control" id="PreparationTime" name="PreparationTime">
+                    </div>
+                    <div class="mb-3">
+                        <label for="CookingTime" class="form-label">Cooking Time</label>
+                        <input type="text" class="form-control" id="CookingTime" name="CookingTime">
+                    </div>
+                    <div class="mb-3">
+                        <label for="TotalTime" class="form-label">Total Time</label>
+                        <input type="text" class="form-control" id="TotalTime" name="TotalTime">
+                    </div>
+                    <div class="mb-3">
+                        <label for="DifficultyLevel" class="form-label">Difficulty Level</label>
+                        <select class="form-select" id="DifficultyLevel" name="DifficultyLevel">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="NutritionalInfo" class="form-label">Nutritional Information</label>
+                        <textarea class="form-control" id="NutritionalInfo" name="NutritionalInfo" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="RecipeImage" class="form-label">Recipe Image</label>
+                        <input type="file" class="form-control" id="RecipeImage" name="RecipeImage">
+                    </div>
+                    <div class="mb-3">
+                        <label for="RecipeCategory" class="form-label">Recipe Category</label>
+                        <select class="form-select" id="RecipeCategory" name="RecipeCategory">
+                            <option value="breakfast">Breakfast</option>
+                            <option value="launch">Launch</option>
+                            <option value="dinner">Dinner</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="UserTags" class="form-label">User Tags</label>
+                        <select class="form-select" id="UserTags" name="UserTags">
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="non-vegetarian">Non Vegetarian</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="TotalCalorie" class="form-label">Total Calories</label>
+                        <input type="text" class="form-control" id="TotalCalorie" name="TotalCalorie">
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Add Recipe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+{% endblock content %}

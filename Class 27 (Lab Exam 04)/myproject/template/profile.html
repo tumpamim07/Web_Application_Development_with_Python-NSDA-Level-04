@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .profile-info {
+            margin-bottom: 20px;
+        }
+        .profile-info label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Profile</h1>
+        <div class="profile-info">
+            <label>Username:</label>
+            <span>{{ user.username }}</span>
+        </div>
+        <div class="profile-info">
+            <label>Email:</label>
+            <span>{{ user.email }}</span>
+        </div>
+        <div class="profile-info">
+            <label>Gender:</label>
+            <span>{{ user.gender }}</span>
+        </div>
+        <div class="profile-info">
+            <label>Age:</label>
+            <span>{{ user.age }}</span>
+        </div>
+        <div class="profile-info">
+            <label>City:</label>
+            <span>{{ user.city }}</span>
+        </div>
+        <div class="profile-info">
+            <label>Country:</label>
+            <span>{{ user.country }}</span>
+        </div>
+        <div class="profile-info">
+            <label>User Type:</label>
+            <span>{{ user.usertype }}</span>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock content %}

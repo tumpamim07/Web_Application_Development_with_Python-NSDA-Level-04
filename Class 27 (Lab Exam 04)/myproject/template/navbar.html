@@ -1,0 +1,12 @@
+<ul>
+    <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+    <li><a href="{% url 'viewallrecipe' %}">All Recipe</a></li>
+
+    
+    {% if user.usertype == 'chef' %}
+    <li><a href="{% url 'addrecipe' %}">Add Recipe</a></li>
+    {% endif %}
+
+    <li style="float:right"><a class="active" href="{% url 'logoutpage' %}">Logout</a></li>
+    <li style="float:right"><a href="{% url 'profile' %}">Profile</a></li>
+  </ul>
